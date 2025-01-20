@@ -199,3 +199,22 @@ $clients:=$ds.Clients.all()
 	}
 ]
 ```
+
+10. test access to all tables
+
+```4d
+var $clients : 4D.EntitySelection
+$clients:=$ds.Clients.all()
+
+var $invoices : 4D.EntitySelection
+$invoices:=$ds.Invoices.all()
+
+var $products : 4D.EntitySelection
+$products:=$ds.Products.all()
+
+var $invoice_lines : 4D.EntitySelection
+$invoice_lines:=$ds.Invoice_Lines.all()
+
+var $__deletedrecords : 4D.EntitySelection
+$__deletedrecords:=$ds.__DeletedRecords.all()
+```
