@@ -11,3 +11,5 @@ presentation material for 4D Method User Group Meeting
 1. open structure file with 4D 20
 2. check products, check clients
 3. in structure editor, check contextual menu; no "enable data change tracking"
+4. reopen with 20 R3+
+5. in structure editor, check contextual menu; new item "enable data change tracking"
