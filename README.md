@@ -13,3 +13,6 @@ presentation material for 4D Method User Group Meeting
 3. in structure editor, check contextual menu; no "enable data change tracking"
 4. reopen with 20 R3+
 5. in structure editor, check contextual menu; new item "enable data change tracking"
+6. enable DCT for all 4 tables
+
+<img src="https://github.com/user-attachments/assets/71a7d2cc-f399-4792-8a9d-afe3f10a6fdf" width=260 height=auto />
