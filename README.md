@@ -130,74 +130,72 @@ $clients:=$ds.Clients.all()
 9. edit *roles.json*
 
 ```json
-"permissions": {
-		"allowed": [
-			{
-				"applyTo":"ds",
-				"type": "datastore",
-				"read": ["none"],
-				"create": ["none"],
-				"update": ["none"],
-				"drop": ["none"],
-				"describe": ["none"],
-				"execute": ["none"],
-				"promote": ["none"]
-			},
-            {
-                "applyTo":"Clients",
-                "type": "dataClass",
-                "read": ["DCT"],
-                "create": ["DCT"],
-                "update": ["DCT"],
-                "drop": ["DCT"],
-                "describe": ["none"],
-                "execute": ["none"],
-                "promote": ["none"]
-            },
-            {
-                "applyTo":"Invoices",
-                "type": "dataClass",
-                "read": ["DCT"],
-                "create": ["DCT"],
-                "update": ["DCT"],
-                "drop": ["DCT"],
-                "describe": ["none"],
-                "execute": ["none"],
-                "promote": ["none"]
-            },
-            {
-                "applyTo":"Products",
-                "type": "dataClass",
-                "read": ["DCT"],
-                "create": ["DCT"],
-                "update": ["DCT"],
-                "drop": ["DCT"],
-                "describe": ["none"],
-                "execute": ["none"],
-                "promote": ["none"]
-            },
-            {
-                "applyTo":"Invoice_Lines",
-                "type": "dataClass",
-                "read": ["DCT"],
-                "create": ["DCT"],
-                "update": ["DCT"],
-                "drop": ["DCT"],
-                "describe": ["none"],
-                "execute": ["none"],
-                "promote": ["none"]
-            },
-            {
-                "applyTo":"__DeletedRecords",
-                "type": "dataClass",
-                "read": ["DCT"],
-                "create": ["DCT"],
-                "update": ["DCT"],
-                "drop": ["DCT"],
-                "describe": ["none"],
-                "execute": ["none"],
-                "promote": ["none"]
-            }
-	]
-}
+"allowed": [
+	{
+		"applyTo":"ds",
+		"type": "datastore",
+		"read": ["none"],
+		"create": ["none"],
+		"update": ["none"],
+		"drop": ["none"],
+		"describe": ["none"],
+		"execute": ["none"],
+		"promote": ["none"]
+	},
+	{
+		"applyTo":"Clients",
+		"type": "dataClass",
+		"read": ["DCT"],
+		"create": ["DCT"],
+		"update": ["DCT"],
+		"drop": ["DCT"],
+		"describe": ["none"],
+		"execute": ["none"],
+		"promote": ["none"]
+	},
+	{
+		"applyTo":"Invoices",
+		"type": "dataClass",
+		"read": ["DCT"],
+		"create": ["DCT"],
+		"update": ["DCT"],
+		"drop": ["DCT"],
+		"describe": ["none"],
+		"execute": ["none"],
+		"promote": ["none"]
+	},
+	{
+		"applyTo":"Products",
+		"type": "dataClass",
+		"read": ["DCT"],
+		"create": ["DCT"],
+		"update": ["DCT"],
+		"drop": ["DCT"],
+		"describe": ["none"],
+		"execute": ["none"],
+		"promote": ["none"]
+	},
+	{
+		"applyTo":"Invoice_Lines",
+		"type": "dataClass",
+		"read": ["DCT"],
+		"create": ["DCT"],
+		"update": ["DCT"],
+		"drop": ["DCT"],
+		"describe": ["none"],
+		"execute": ["none"],
+		"promote": ["none"]
+	},
+	{
+		"applyTo":"__DeletedRecords",
+		"type": "dataClass",
+		"read": ["DCT"],
+		"create": ["DCT"],
+		"update": ["DCT"],
+		"drop": ["DCT"],
+		"describe": ["none"],
+		"execute": ["none"],
+		"promote": ["none"]
+	}
+]
 ```
