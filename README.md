@@ -27,5 +27,5 @@ presentation material for 4D Method User Group Meeting
 
 <img src="https://github.com/user-attachments/assets/3b77eca6-ce16-45cd-8943-d867b76bd637" width=800 height=auto />
 
-
+<img src="https://github.com/user-attachments/assets/8b842b78-49d2-4b1e-9892-e9fa4771b73e" width=480 height=auto />
 
