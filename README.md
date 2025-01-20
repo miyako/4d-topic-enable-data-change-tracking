@@ -116,4 +116,88 @@ $status:=$ds.authentify({secret: "demo-demo-2025-0123"; privileges: ["DCT"]})
 //%W+550.2
 ```
 
-> the REST client must also be restarted because `ds("local")` is cached from previous connection.
+> the REST client must also be restarted because `ds("local")` is cached from the previous connection.
+
+8. attempt to access data.
+
+```4d
+var $clients : 4D.EntitySelection
+$clients:=$ds.Clients.all()
+```
+
+> an error is raised because access is not explicitly given in *roles.json*.
+
+9. edit *roles.json*
+
+```json
+"permissions": {
+		"allowed": [
+			{
+				"applyTo":"ds",
+				"type": "datastore",
+				"read": ["none"],
+				"create": ["none"],
+				"update": ["none"],
+				"drop": ["none"],
+				"describe": ["none"],
+				"execute": ["none"],
+				"promote": ["none"]
+			},
+            {
+                "applyTo":"Clients",
+                "type": "dataClass",
+                "read": ["DCT"],
+                "create": ["DCT"],
+                "update": ["DCT"],
+                "drop": ["DCT"],
+                "describe": ["none"],
+                "execute": ["none"],
+                "promote": ["none"]
+            },
+            {
+                "applyTo":"Invoices",
+                "type": "dataClass",
+                "read": ["DCT"],
+                "create": ["DCT"],
+                "update": ["DCT"],
+                "drop": ["DCT"],
+                "describe": ["none"],
+                "execute": ["none"],
+                "promote": ["none"]
+            },
+            {
+                "applyTo":"Products",
+                "type": "dataClass",
+                "read": ["DCT"],
+                "create": ["DCT"],
+                "update": ["DCT"],
+                "drop": ["DCT"],
+                "describe": ["none"],
+                "execute": ["none"],
+                "promote": ["none"]
+            },
+            {
+                "applyTo":"Invoice_Lines",
+                "type": "dataClass",
+                "read": ["DCT"],
+                "create": ["DCT"],
+                "update": ["DCT"],
+                "drop": ["DCT"],
+                "describe": ["none"],
+                "execute": ["none"],
+                "promote": ["none"]
+            },
+            {
+                "applyTo":"__DeletedRecords",
+                "type": "dataClass",
+                "read": ["DCT"],
+                "create": ["DCT"],
+                "update": ["DCT"],
+                "drop": ["DCT"],
+                "describe": ["none"],
+                "execute": ["none"],
+                "promote": ["none"]
+            }
+	]
+}
+```
