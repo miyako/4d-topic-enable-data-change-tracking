@@ -1,19 +1,19 @@
 ![version](https://img.shields.io/badge/version-20%20R6%2B-E23089)
 
-|feature|availability|blog|
-|-|:-:|-|
-|ORDA|17||
-|remote datastore|18|[Multiple 4D data sources, interested?](https://blog.4d.com/multiple-4d-data-sources-interested/)|
-|classes|18 R3|[An intro to object-oriented programming in 4D: Classes](https://blog.4d.com/an-intro-to-object-oriented-programming-in-4d-classes/)|
-|data model classes|18 R4|[Welcome to the world of ORDA classes](https://blog.4d.com/welcome-to-the-world-of-orda-classes/)|
-|extend data model classes|18 R4|[ORDA Classes to handle your data model](https://blog.4d.com/orda-classes-to-handle-your-data-model/)|
-|REST API scope|18 R5|[ORDA – Improve your API with function scope](https://blog.4d.com/orda-improve-your-api-with-function-scope/)|
-|passwords stored in bcrypt|19 R3|[Bcrypt support for passwords](https://blog.4d.com/bcrypt-support-for-passwords/)|
-|session permission|19 R8|[Filter Access to your Data with a Complete System of Permissions](https://blog.4d.com/filter-access-to-your-data-with-a-complete-system-of-permissions/)|
-|data change tracking|20 R3|[Track data changes in your database](https://blog.4d.com/track-data-changes-in-your-database/)|
-|open datastore behaviour change|20 R4|[ACI0104515](https://developer.4d.com/docs/Notes/updates#4d-20-r4) also LTS 20.3 and later|
-|force login mode|20 R5|[Improved 4D Client Licenses Usage with Qodly Studio for 4D](https://blog.4d.com/improved-4d-client-licenses-usage-with-qodly-studio-for-4d/)|
-|force login mode by default|20 R6|[Force Login Becomes Default for all REST Auth](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/)|
+|feature|availability|blog|project mode required|
+|-|:-:|-|:-:|
+|ORDA|17|||
+|remote datastore|18|[Multiple 4D data sources, interested?](https://blog.4d.com/multiple-4d-data-sources-interested/)||
+|classes|18 R3|[An intro to object-oriented programming in 4D: Classes](https://blog.4d.com/an-intro-to-object-oriented-programming-in-4d-classes/)|yes|
+|data model classes|18 R4|[Welcome to the world of ORDA classes](https://blog.4d.com/welcome-to-the-world-of-orda-classes/)||
+|extend data model classes|18 R4|[ORDA Classes to handle your data model](https://blog.4d.com/orda-classes-to-handle-your-data-model/)|yes|
+|REST API scope|18 R5|[ORDA – Improve your API with function scope](https://blog.4d.com/orda-improve-your-api-with-function-scope/)|yes|
+|passwords stored in bcrypt|19 R3|[Bcrypt support for passwords](https://blog.4d.com/bcrypt-support-for-passwords/)||
+|session permission|19 R8|[Filter Access to your Data with a Complete System of Permissions](https://blog.4d.com/filter-access-to-your-data-with-a-complete-system-of-permissions/)|yes|
+|data change tracking|20 R3|[Track data changes in your database](https://blog.4d.com/track-data-changes-in-your-database/)||
+|open datastore behaviour change|20 R4|[ACI0104515](https://developer.4d.com/docs/Notes/updates#4d-20-r4) also LTS 20.3 and later||
+|force login mode|20 R5|[Improved 4D Client Licenses Usage with Qodly Studio for 4D](https://blog.4d.com/improved-4d-client-licenses-usage-with-qodly-studio-for-4d/)|yes|
+|force login mode by default|20 R6|[Force Login Becomes Default for all REST Auth](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/)|yes|
 
 # Enable Data Change Tracking
 presentation material for 4D Method User Group Meeting
