@@ -1,4 +1,14 @@
 ![version](https://img.shields.io/badge/version-20%20R6%2B-E23089)
+
+|feature|availability|blog|
+|-|:-:|-|
+|passwords stored in bcrypt|19 R3|[Bcrypt support for passwords](https://blog.4d.com/bcrypt-support-for-passwords/)|
+|session permission|19 R8|[Filter Access to your Data with a Complete System of Permissions](https://blog.4d.com/filter-access-to-your-data-with-a-complete-system-of-permissions/)|
+|data change tracking|20 R3|[Track data changes in your database](https://blog.4d.com/track-data-changes-in-your-database/)|
+|open datastore behaviour change|20 R4|[ACI0104515](https://developer.4d.com/docs/Notes/updates#4d-20-r4) also LTS 20.3 and later|
+|force login mode|20 R5|[Improved 4D Client Licenses Usage with Qodly Studio for 4D](https://blog.4d.com/improved-4d-client-licenses-usage-with-qodly-studio-for-4d/)|
+|force login mode by default|20 R6|[Force Login Becomes Default for all REST Auth](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/)|
+
 # Enable Data Change Tracking
 presentation material for 4D Method User Group Meeting
 
