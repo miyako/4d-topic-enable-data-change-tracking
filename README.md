@@ -15,14 +15,17 @@
 |force login mode|20 R5|[Improved 4D Client Licenses Usage with Qodly Studio for 4D](https://blog.4d.com/improved-4d-client-licenses-usage-with-qodly-studio-for-4d/)|yes|
 |force login mode by default|20 R6|[Force Login Becomes Default for all REST Auth](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/)|yes|
 
-* the DCT server must be...
-	* 20 R5 or later
-  	* running on 4D Server
-  	* project mode
-  	* 
-* the DCT client must be...
-	* 20 R3 or later
+#### DCT server must be...
+* 4D 20 R5 or above
+* running on 4D Server
+* project mode
+  	
+#### DCT synchronisation client must be...
+* 4D 20 R3 or above
 
+#### DCT replication client must be...
+* 4D 18 or above
+ 
 # Enable Data Change Tracking
 presentation material for 4D Method User Group Meeting
 
