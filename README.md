@@ -128,11 +128,11 @@ exposed Function authentify($params : Object) : Object
 
 ```json
 "privileges": [
-		{
-			"privilege": "none"
-		},
+	{
+		"privilege": "none"
+	},
         {
-            "privilege": "DCT"
+		"privilege": "DCT"
         }
 ]
 ```
@@ -146,7 +146,9 @@ $status:=$ds.authentify({secret: "demo-demo-2025-0123"; privileges: ["DCT"]})
 //%W+550.2
 ```
 
-> the REST client must also be restarted because `ds("local")` is cached from the previous connection.
+> the `%W` compiler directive is used to [disable specific warnings locally](https://developer.4d.com/docs/Project/compiler#disabling-and-enabling-warnings-locally). this is because `.authentify()` is not a native member function of 4D.DataStoreImplementation. see also the blog post [Customize Global Warnings Generation](https://blog.4d.com/customize-global-warnings-generation/) 
+
+> the REST client must also be restarted because the remote datastore procy object `ds("local")` would be cached from the previous connection.
 
 8. attempt to access data.
 
