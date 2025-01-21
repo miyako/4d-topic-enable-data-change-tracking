@@ -253,7 +253,7 @@ var $__deletedrecords : 4D.EntitySelection
 $__deletedrecords:=$ds.__DeletedRecords.all()
 ```
 
-## about permissions, privilege, roles
+## permissions, privileges, roles
 
 * **permission** is the authority to perform specific actions on specific resources. basic CRUD actions (create, read, update, drop) each require specific permissions. there are 2 types of permissions (execute, promote) for code execution. there used to be a 7th type of permission (describe) for reading only the catalog information but this was deprecated in 20 R7.
 
