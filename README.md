@@ -116,7 +116,7 @@ exposed Function authentify($params : Object) : Object
 	$status:={success: False}
 	
 	If ($params.secret="demo-demo-2025-0123")
-		$status.success:=Session.setPrivileges($params.privileges)
+		$status.success:=Session.setPrivileges(["DCT"])
 	End if 
 	
 	return $status
@@ -137,12 +137,14 @@ exposed Function authentify($params : Object) : Object
 ]
 ```
 
+> "none" is a special [locking privilege](https://developer.4d.com/docs/ORDA/privileges#default-file) that has no permissions.
+
 7. add `ds.authentify()` call to the REST client.
 
 ```4d
 var $status : Object
 //%W-550.2
-$status:=$ds.authentify({secret: "demo-demo-2025-0123"; privileges: ["DCT"]})
+$status:=$ds.authentify({secret: "demo-demo-2025-0123"})
 //%W+550.2
 ```
 
