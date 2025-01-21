@@ -259,7 +259,7 @@ $__deletedrecords:=$ds.__DeletedRecords.all()
 
 * both a **privilege** and a **role** represents the possession of 0 or more permissions. the difference is that a privilege is the technical ability to exercise a a set of permissions whereas a role describes the typical user profile who needs the privileges to exercise a a set of permissions. 
 
-* it is not mandatory to define roles; you can work only with privileges. a privilege can includes a group of other privileges. the [`Session.setPrivileges()`](https://developer.4d.com/docs/API/SessionClass#setprivileges) accepts
+* it is not mandatory to define roles; you can work only with privileges. a privilege can includes a group of other privileges. the [`Session.setPrivileges()`](https://developer.4d.com/docs/API/SessionClass#setprivileges) function accepts:
 
 1. a single privilege name
 2. a collection of privilege names
