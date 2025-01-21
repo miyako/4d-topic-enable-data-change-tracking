@@ -150,7 +150,7 @@ $status:=$ds.authentify({secret: "demo-demo-2025-0123"})
 
 > the `%W` compiler directive is used to [disable specific warnings locally](https://developer.4d.com/docs/Project/compiler#disabling-and-enabling-warnings-locally). this is because `.authentify()` is not a native member function of 4D.DataStoreImplementation. see also the blog post [Customize Global Warnings Generation](https://blog.4d.com/customize-global-warnings-generation/) 
 
-> the REST client must also be restarted because the remote datastore procy object `ds("local")` would be cached from the previous connection.
+> the REST client must also be restarted because the remote datastore proxy object `ds("local")` would be cached from the previous connection.
 
 8. attempt to access data.
 
@@ -252,3 +252,19 @@ $invoice_lines:=$ds.Invoice_Lines.all()
 var $__deletedrecords : 4D.EntitySelection
 $__deletedrecords:=$ds.__DeletedRecords.all()
 ```
+
+## about permissions, privilege, roles
+
+* **permission** is the authority to perform specific actions on specific resources. basic CRUD actions (create, read, update, drop) each require specific permissions. there are 2 types of permissions (execute, promote) for code execution. there used to be a 7th type of permission (describe) for reading only the catalog information but this was deprecated in 20 R7.
+
+* both a **privilege** and a **role** represents the possession of 0 or more permissions. the difference is that a privilege is the technical ability to exercise a a set of permissions whereas a role describes the typical user profile who needs the privileges to exercise a a set of permissions. 
+
+* it is not mandatory to define roles; you can work only with privileges. a privilege can includes a group of other privileges. the [`Session.setPrivileges()`](https://developer.4d.com/docs/API/SessionClass#setprivileges) accepts
+
+1. a single privilege name
+2. a collection of privilege names
+3. a single role
+4. a collection of roles
+5. any combination of the above
+
+you may defines roles as user-friendly abstractions instead of referring to privileges directly, whether you use roles or not, a session is internally assigned a collection of privileges. not roles. 
