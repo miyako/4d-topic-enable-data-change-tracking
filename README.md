@@ -267,4 +267,4 @@ $__deletedrecords:=$ds.__DeletedRecords.all()
 4. a collection of roles
 5. any combination of the above
 
-you may defines roles as user-friendly abstractions instead of referring to privileges directly. whether you use roles or not, a session is internally assigned a collection of privileges. not roles. 
+you may defines roles as user-friendly abstractions instead of referring to privileges directly. whether you use roles or not, a session is internally assigned a collection of privileges, not roles. 
