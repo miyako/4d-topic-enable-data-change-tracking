@@ -28,6 +28,11 @@
 
 #### DCT replication client must be...
 * 4D 18 or above
+
+## References
+
+* [Using the Global Stamp](https://developer.4d.com/docs/20-R7/ORDA/global-stamp)
+* [Open datastore](https://developer.4d.com/docs/commands/open-datastore)
  
 # Enable Data Change Tracking
 presentation material for 4D Method User Group Meeting
