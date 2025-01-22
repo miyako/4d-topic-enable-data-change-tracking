@@ -66,7 +66,7 @@ presentation material for 4D Method User Group Meeting
 
 # Phase 3
 
-1. intentionally braak *roles.json*
+1. intentionally break *roles.json*
 2. restart interpreted
 3. check *Roles_Errors.json*
 4. restore *roles.json*
