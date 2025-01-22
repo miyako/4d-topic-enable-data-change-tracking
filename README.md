@@ -52,7 +52,7 @@ presentation material for 4D Method User Group Meeting
 
 <img src="https://github.com/user-attachments/assets/71a7d2cc-f399-4792-8a9d-afe3f10a6fdf" width=260 height=auto />
 
-# Phase 2
+# [Phase 2](https://github.com/miyako/4d-topic-enable-data-change-tracking/releases/tag/Phase-2)
 
 1. export to project
 2. rename *.4DProject*
