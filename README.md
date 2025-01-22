@@ -7,11 +7,36 @@
 
 there are several mechanisms built into 4D that allows the replication of records between databases.
 
-|mechanism|availability|documentation|remarks|
-|-|:-:|-|-|
-|[SQL REPLICATE](https://doc.4d.com/4Dv20/4D/20/REPLICATE.300-6342149.en.html)<br />[SQL SYNCHRONIZE](https://doc.4d.com/4Dv20/4D/20/SYNCHRONIZE.300-6342131.en.html)|12|[Replication via SQL](https://doc.4d.com/4Dv20/4D/20/Replication-via-SQL.300-6342092.en.html)|not thread safe<br />not ORDA<br />no object fields|
-|[HTTP 4DSYNC](https://doc.4d.com/4Dv18/4D/18.4/Connection-Security.300-5232834.en.html)|12|[Allow database access through 4DSYNC URLs](https://developer.4d.com/docs/settings/web#allow-database-access-through-4dsync-urls)|not thread safe<br />not ORDA<br />no object fields<br />deprecated<br />designed for the iSort for iOS app|
+* **Replication via SQL** is based on a proprietary SQL command that allows data to be replicated or synchronised between 4D databases. the feature can be activate per table. when activated, 3 virtual fields are added to the table which are only accessible via SQL. their values are stored outside the main database, in the files *.4DSyncHeader* and *.4DSyncData*. the delta between local and remote databases are managed by comparing the `__ROW_STAMP` virtual field for each table.
+	* the remote database must be **4D Server**
+	* the local database can be 4D Desktop or 4D Server 
+	* object fields are not supported    
+* **4DSYNC** is a URL reserved by the 4D Web Server that triggers a mechanism similar to SQL replication over HTTP. the behaviour on the server side is completely automatic. the data is sent to the server in XML format.
+	* this feature is **deprecated**
+	* the remote database must be **4D Web Server**
+	* the local database can be any HTTP agent
+	* object fields are not supported
+	* this feature was especially designed for the iSort for iOS app
+* **Mirroring** is an extension of the standard backup mechanism based on journal files that allows data to be replicated between 4D databases. unlike SQL replication or synchronisation, the complete change history is reproduced, not just the final record data. only 4D Server can create or integrate journal segment files. the delta between local and remote databases are managed by comparing the journal operation number of each database.
+	* both databases must be **4D Server**
+	* one must developer their own system for sending and receiving journal segment files
+* Data Change Tracking is a sysmtem similar to SQL repliation or 4DSYNC but with the following advantages:
+	* ORDA, not SQL
+ 	* native objects, not XML 
+	* supports object fields
+	* no external files such as *.4DSyncHeader* or *.4DSyncData*
+  	* better access control
 
+## Comparison
+
+|commands|availability|documentation|
+|-|:-:|-|
+|[`REPLICATE`](https://doc.4d.com/4Dv20/4D/20/REPLICATE.300-6342149.en.html)<br />[`SYNCHRONIZE`](https://doc.4d.com/4Dv20/4D/20/SYNCHRONIZE.300-6342131.en.html)|12|[Replication via SQL](https://doc.4d.com/4Dv20/4D/20/Replication-via-SQL.300-6342092.en.html)|
+|[`4DSYNC`](https://doc.4d.com/4Dv18/4D/18.4/Connection-Security.300-5232834.en.html)|12|[Allow database access through 4DSYNC URLs](https://developer.4d.com/docs/settings/web#allow-database-access-through-4dsync-urls)|
+|[`New log file`](https://developer.4d.com/docs/commands/new-log-file)<br />[`INTEGRATE MIRROR LOG FILE`](https://developer.4d.com/docs/commands/integrate-mirror-log-file)|14|[Setting up a logical mirror](https://doc.4d.com/4Dv20/4D/20/Setting-up-a-logical-mirror.300-6330536.en.html)|
+|[`ds.getGlobalStamp()`](https://developer.4d.com/docs/API/DataStoreClass#getglobalstamp)<br />[`ds.setGlobalStamp()`](https://developer.4d.com/docs/API/DataStoreClass#setglobalstamp)|20 R3|[Using the Global Stamp](https://developer.4d.com/docs/ORDA/global-stamp)|
+
+## Evolution
 
 |feature|availability|blog|project mode|
 |-|:-:|-|:-:|
