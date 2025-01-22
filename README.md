@@ -279,7 +279,17 @@ you may defines roles as user-friendly abstractions instead of referring to priv
 # Phase 5
 
 1. download [DCT](https://github.com/miyako/DCT) project and install as component
-2. use the `cs.DCT.DCT` class
+2. add code to save changes in method `Client` lines `46` to `48`
+
+```4d
+DIALOG($pTable->; $formName; $params)
+If (OK=1)
+	SAVE RECORD($pTable->)
+End if 
+KILL WORKER
+```
+ 
+4. use the `cs.DCT.DCT` class
 
 ```4d
 var $DCT : cs.DCT.DCT
