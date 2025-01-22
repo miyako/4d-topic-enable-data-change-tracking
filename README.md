@@ -309,7 +309,31 @@ you may defines roles as user-friendly abstractions instead of referring to priv
 # Phase 5
 
 1. download [DCT](https://github.com/miyako/DCT) project and install as component
-2. trace the `cs.DCT.DCT` class
+2. add a wrapper for `ds.getGlobalStamp()`
+
+```4d
+exposed Function getRemoteGlobalStamp() : Real
+	
+	return ds.getGlobalStamp()
+```
+
+3. edit *roles.json*
+
+```json
+{
+	"applyTo":"ds.getRemoteGlobalStamp",
+	"type": "method",
+	"read": ["none"],
+	"create": ["none"],
+	"update": ["none"],
+	"drop": ["none"],
+	"describe": ["none"],
+	"execute": ["DCT"],
+	"promote": ["none"]
+}
+``` 
+
+4. trace the `cs.DCT.DCT` class
 
 ```4d
 var $DCT : cs.DCT.DCT
@@ -335,6 +359,7 @@ If ($DCT.connect({hostname: "localhost"; idleTimeout: 100}))
 End if
 ```
 
-3. modify records locally
-4. trace the `cs.DCT.DCT` class
-5. modify records remotely
+5. modify records locally
+6. trace the `cs.DCT.DCT` class
+7. modify records remotely
+8. trace the `cs.DCT.DCT` class
