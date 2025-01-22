@@ -41,7 +41,7 @@ presentation material for 4D Method User Group Meeting
 
 <img src="https://github.com/user-attachments/assets/0e9f6cdf-28e3-494f-952b-06e1830df8bf" width=800 height=auto />
 
-# Phase 1
+# [Phase 1](https://github.com/miyako/4d-topic-enable-data-change-tracking/releases/tag/Phase-1)
 
 1. open structure file with 4D 20
 2. check products, check clients
