@@ -3,6 +3,16 @@
 [![license](https://img.shields.io/github/license/miyako/4d-topic-enable-data-change-tracking)](LICENSE)
 ![downloads](https://img.shields.io/github/downloads/miyako/4d-topic-enable-data-change-tracking/total)
 
+## SQL vs mirroring vs DCT
+
+there are several mechanisms built into 4D that allows the replication of records between databases.
+
+|mechanism|availability|documentation|remarks|
+|-|:-:|-|-|
+|[SQL REPLICATE](https://doc.4d.com/4Dv20/4D/20/REPLICATE.300-6342149.en.html)<br />[SQL SYNCHRONIZE](https://doc.4d.com/4Dv20/4D/20/SYNCHRONIZE.300-6342131.en.html)|12|[Replication via SQL](https://doc.4d.com/4Dv20/4D/20/Replication-via-SQL.300-6342092.en.html)|not thread safe<br />not ORDA<br />no object fields|
+|[HTTP 4DSYNC](https://doc.4d.com/4Dv18/4D/18.4/Connection-Security.300-5232834.en.html)|12|[Allow database access through 4DSYNC URLs](https://developer.4d.com/docs/settings/web#allow-database-access-through-4dsync-urls)|not thread safe<br />not ORDA<br />no object fields<br />deprecated<br />designed for the iSort for iOS app|
+
+
 |feature|availability|blog|project mode|
 |-|:-:|-|:-:|
 |ORDA|17|[How ORDA will change the way you work](https://blog.4d.com/how-orda-will-change-the-way-you-work/)||
