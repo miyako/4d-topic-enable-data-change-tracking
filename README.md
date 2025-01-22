@@ -258,6 +258,8 @@ var $__deletedrecords : 4D.EntitySelection
 $__deletedrecords:=$ds.__DeletedRecords.all()
 ```
 
+> this time it is not necessary to restart the REST client because the change is applied on the server side. only the REST server needs to be restarted.
+
 ## permissions, privileges, roles
 
 * **permission** is the authority to perform specific actions on specific resources. basic CRUD actions (create, read, update, drop) each require specific permissions. there are 2 types of permissions (execute, promote) for code execution. there used to be a 7th type of permission (describe) for reading only the catalog information but this was deprecated in 20 R7.
