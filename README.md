@@ -275,3 +275,32 @@ $__deletedrecords:=$ds.__DeletedRecords.all()
 5. any combination of the above
 
 you may defines roles as user-friendly abstractions instead of referring to privileges directly. whether you use roles or not, a session is internally assigned a collection of privileges, not roles. 
+
+# Phase 5
+
+1. download [DCT](https://github.com/miyako/DCT) project and install as component
+2. use the `cs.DCT.DCT` class
+
+```4d
+var $DCT : cs.DCT.DCT
+
+$DCT:=cs.DCT.DCT.new()
+
+If ($DCT.connect({hostname: "localhost"; idleTimeout: 100}))
+	
+	var $ds : 4D.DataStoreImplementation
+	$ds:=$DCT.ds
+	
+	var $status : Object
+	//%W-550.2
+	$status:=$ds.authentify({secret: "demo-demo-2025-0123"})
+	//%W+550.2
+	
+	If ($status.success)
+		
+		$DCT.sync()
+		
+	End if 
+	
+End if
+```
