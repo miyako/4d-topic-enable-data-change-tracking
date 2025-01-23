@@ -4,7 +4,7 @@
 ![downloads](https://img.shields.io/github/downloads/miyako/4d-topic-enable-data-change-tracking/total)
 
 # Enable Data Change Tracking
-presentation material for 4D Method User Group Meeting #76, 22nd January 2025
+presentation material for [4D Method User Group Meeting #76](https://4dmethod.com/2025/01/09/enable-data-change-tracking-keisuke-miyako/)
 
 ## SQL vs Mirroring vs DCT
 
@@ -365,3 +365,5 @@ End if
 6. trace the `cs.DCT.DCT` class
 7. modify records remotely
 8. trace the `cs.DCT.DCT` class
+
+## Q and A
