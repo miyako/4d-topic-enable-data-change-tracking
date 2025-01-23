@@ -398,3 +398,15 @@ yes. the component uses the standard ORDA functions [`entity.drop()`](https://de
 
 * [ALTER TABLE](https://doc.4d.com/4Dv20/4D/20/ALTER-TABLE.300-6342143.en.html)
 * [ALTER DATABASE](https://doc.4d.com/4Dv20/4D/20/ALTER-DATABASE.300-6342132.en.html)
+
+### what happens if CRUD operation fails?
+
+the component save the `status` object returned from `entity.drop()` or `entity.save()` in a log file. look for `writeLine‎` in `DCT.4dm`(https://github.com/miyako/DCT/blob/main/DCT/Project/Sources/Classes/DCT.4dm).
+
+### what happens when a save operation fails because of collision?
+
+the component touches the entity when `entity.save()` fails, to effectively "bump" the table's global stamp. for the local database, this is done by assigning the `__GlobalStamp` field back to itself without change. for remote database, this is done by assigning the primary key back to itself without change. see `_touchLocalEntity()` and `_touchRemoteEntity()` in `DCT.4dm`(https://github.com/miyako/DCT/blob/main/DCT/Project/Sources/Classes/DCT.4dm). touching the entity without changing its value should result in a successful `entity.save()` if the reason for failure is logical, such as collision. a successful `entity.save()` would automatically increment the global stamp. this means the entity which couldn't be updated would be excluded from the next replication.
+
+### wouldn't the act of replication itself create a delta between the two databases?
+
+the component increments the stamp stored for the next operation by `1` after a successful `entity.save()`. this means the entity which couldn't be updated would be excluded from the next replication. look for `__GlobalStamp+1` in `DCT.4dm`(https://github.com/miyako/DCT/blob/main/DCT/Project/Sources/Classes/DCT.4dm).
