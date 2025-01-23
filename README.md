@@ -418,3 +418,5 @@ DCT is based on native ORDA features, meaning all the tools available in data mo
 * the `30` seconds client cache introduced in 4D 18 R3; see [`entitySelection.refresh()`](https://developer.4d.com/docs/API/EntitySelectionClass#refresh)
 * the `30000` BLOB cache introduced in 4D 19 R5; see [`ds.getRemoteCache()`](https://developer.4d.com/docs/API/DataClassClass#getremotecache), [`ds.setRemoteCacheSettings()`](https://developer.4d.com/docs/API/DataClassClass#setremotecachesettings)
 * the remote context, also introduced in 4D 19 R5; see [`ds.getRemoteContextInfo()`](https://developer.4d.com/docs/API/DataStoreClass.html#getremotecontextinfo), [`ds.getAllRemoteContexts()`](https://developer.4d.com/docs/API/DataStoreClass.html#getallremotecontexts)
+
+also any tables and fields not made available via REST are never sent over the network.
