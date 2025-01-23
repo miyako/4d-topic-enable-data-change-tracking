@@ -401,12 +401,20 @@ yes. the component uses the standard ORDA functions [`entity.drop()`](https://de
 
 ### what happens if CRUD operation fails?
 
-the component save the `status` object returned from `entity.drop()` or `entity.save()` in a log file. look for `writeLine‎` in `DCT.4dm`(https://github.com/miyako/DCT/blob/main/DCT/Project/Sources/Classes/DCT.4dm).
+the component save the `status` object returned from `entity.drop()` or `entity.save()` in a log file. look for `writeLine‎` in [`DCT.4dm`](https://github.com/miyako/DCT/blob/main/DCT/Project/Sources/Classes/DCT.4dm).
 
 ### what happens when a save operation fails because of collision?
 
-the component touches the entity when `entity.save()` fails, to effectively "bump" the table's global stamp. for the local database, this is done by assigning the `__GlobalStamp` field back to itself without change. for remote database, this is done by assigning the primary key back to itself without change. see `_touchLocalEntity()` and `_touchRemoteEntity()` in `DCT.4dm`(https://github.com/miyako/DCT/blob/main/DCT/Project/Sources/Classes/DCT.4dm). touching the entity without changing its value should result in a successful `entity.save()` if the reason for failure is logical, such as collision. a successful `entity.save()` would automatically increment the global stamp. this means the entity which couldn't be updated would be excluded from the next replication.
+the component touches the entity when `entity.save()` fails, to effectively "bump" the table's global stamp. for the local database, this is done by assigning the `__GlobalStamp` field back to itself without change. for remote database, this is done by assigning the primary key back to itself without change. see `_touchLocalEntity()` and `_touchRemoteEntity()` in [`DCT.4dm`](https://github.com/miyako/DCT/blob/main/DCT/Project/Sources/Classes/DCT.4dm). touching the entity without changing its value should result in a successful `entity.save()` if the reason for failure is logical, such as collision. a successful `entity.save()` would automatically increment the global stamp. this means the entity which couldn't be updated would be excluded from the next replication.
 
 ### wouldn't the act of replication itself create a delta between the two databases?
 
-the component increments the stamp stored for the next operation by `1` after a successful `entity.save()`. this means the entity which couldn't be updated would be excluded from the next replication. look for `__GlobalStamp+1` in `DCT.4dm`(https://github.com/miyako/DCT/blob/main/DCT/Project/Sources/Classes/DCT.4dm).
+the component increments the stamp stored for the next operation by `1` after a successful `entity.save()`. this means the entity which couldn't be updated would be excluded from the next replication. look for `__GlobalStamp+1` in [`DCT.4dm`](https://github.com/miyako/DCT/blob/main/DCT/Project/Sources/Classes/DCT.4dm).
+
+### how can I optimise the network traffic?
+
+DCT is based on native ORDA features, meaning all the tools available in data model classes are applicable, including the following
+
+* the `30` seconds client cache introduced in 4D 18 R3; see [`entitySelection.refresh()`](https://developer.4d.com/docs/API/EntitySelectionClass#refresh)
+* the `30000` BLOB cache introduced in 4D 19 R5; see [`ds.getRemoteCache()`](https://developer.4d.com/docs/API/DataClassClass#getremotecache), [`ds.setRemoteCacheSettings()`](https://developer.4d.com/docs/API/DataClassClass#setremotecachesettings)
+* the remote context, also introduced in 4D 19 R5; see [`ds.getRemoteContextInfo()`](https://developer.4d.com/docs/API/DataStoreClass.html#getremotecontextinfo), [`ds.getAllRemoteContexts()`](https://developer.4d.com/docs/API/DataStoreClass.html#getallremotecontexts)
