@@ -3,7 +3,7 @@
 [![license](https://img.shields.io/github/license/miyako/4d-topic-enable-data-change-tracking)](LICENSE)
 ![downloads](https://img.shields.io/github/downloads/miyako/4d-topic-enable-data-change-tracking/total)
 
-## SQL vs mirroring vs DCT
+## SQL vs Mirroring vs DCT
 
 there are several mechanisms built into 4D that allows the replication of records between databases.
 
@@ -27,7 +27,7 @@ there are several mechanisms built into 4D that allows the replication of record
 	* no external files such as *.4DSyncHeader* or *.4DSyncData*
   	* better access control
 
-## Comparison
+## Features Comparison
 
 |commands|availability|documentation|
 |-|:-:|-|
@@ -36,7 +36,7 @@ there are several mechanisms built into 4D that allows the replication of record
 |[`New log file`](https://developer.4d.com/docs/commands/new-log-file)<br />[`INTEGRATE MIRROR LOG FILE`](https://developer.4d.com/docs/commands/integrate-mirror-log-file)|14|[Setting up a logical mirror](https://doc.4d.com/4Dv20/4D/20/Setting-up-a-logical-mirror.300-6330536.en.html)|
 |[`ds.getGlobalStamp()`](https://developer.4d.com/docs/API/DataStoreClass#getglobalstamp)<br />[`ds.setGlobalStamp()`](https://developer.4d.com/docs/API/DataStoreClass#setglobalstamp)|20 R3|[Using the Global Stamp](https://developer.4d.com/docs/ORDA/global-stamp)|
 
-## Evolution
+## Anatomy of DCT
 
 |feature|availability|blog|project mode|
 |-|:-:|-|:-:|
@@ -52,6 +52,8 @@ there are several mechanisms built into 4D that allows the replication of record
 |open datastore behaviour change|20 R4|[ACI0104515](https://developer.4d.com/docs/Notes/updates#4d-20-r4) also LTS 20.3 and later||
 |force login mode|20 R5|[Improved 4D Client Licenses Usage with Qodly Studio for 4D](https://blog.4d.com/improved-4d-client-licenses-usage-with-qodly-studio-for-4d/)|required|
 |force login mode by default|20 R6|[Force Login Becomes Default for all REST Auth](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/)|required|
+
+## System Requirements
 
 #### DCT server must be...
 * 4D 20 R5 or above
