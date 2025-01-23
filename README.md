@@ -3,6 +3,9 @@
 [![license](https://img.shields.io/github/license/miyako/4d-topic-enable-data-change-tracking)](LICENSE)
 ![downloads](https://img.shields.io/github/downloads/miyako/4d-topic-enable-data-change-tracking/total)
 
+# Enable Data Change Tracking
+presentation material for 4D Method User Group Meeting #76, 22nd January 2025
+
 ## SQL vs Mirroring vs DCT
 
 there are several mechanisms built into 4D that allows the replication of records between databases.
@@ -66,10 +69,7 @@ there are several mechanisms built into 4D that allows the replication of record
 #### DCT replication client must be...
 * 4D 18 or above
 
-# Enable Data Change Tracking
-presentation material for 4D Method User Group Meeting
-
- # Structure
+## Structure
 
 <img src="https://github.com/user-attachments/assets/0e9f6cdf-28e3-494f-952b-06e1830df8bf" width=800 height=auto />
 
