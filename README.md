@@ -368,9 +368,9 @@ End if
 
 ## Extra
 
-Q. which licenses would I need to use DCT?
+### Q. which licenses would I need to use DCT?
 
-A. the remote (server) database needs to be published as a REST server. this means you need licenses to publish the application as a REST server. [connections via REST Server are handled as session-based connections with a minimum usage time of 60 minutes](https://downloads.4d.com/Documents/Website/Legal/4D_Product_Specific_Terms/4D_Product_Specific_Terms_English.pdf).
+the remote (server) database needs to be published as a REST server. this means you need licenses to publish the application as a REST server. [connections via REST Server are handled as session-based connections with a minimum usage time of 60 minutes](https://downloads.4d.com/Documents/Website/Legal/4D_Product_Specific_Terms/4D_Product_Specific_Terms_English.pdf).
 * 4D Developer Professional (which comes with [one local access and one remote access](https://downloads.4d.com/Documents/Website/Legal/4D_Product_Specific_Terms/4D_Product_Specific_Terms_English.pdf) to test the REST server)
 * 4D Team Developer Professional (likewise)
 * 4D Server ([REST connection requires a client expansion license](https://downloads.4d.com/Documents/Website/Legal/4D_Product_Specific_Terms/4D_Product_Specific_Terms_English.pdf))
