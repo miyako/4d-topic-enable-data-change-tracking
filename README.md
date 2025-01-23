@@ -368,7 +368,7 @@ End if
 
 ## Extra
 
-### Q. which licenses would I need to use DCT?
+### which licenses would I need to use DCT?
 
 the remote (server) database needs to be published as a REST server. this means you need licenses to publish the application as a REST server. [connections via REST Server are handled as session-based connections with a minimum usage time of 60 minutes](https://downloads.4d.com/Documents/Website/Legal/4D_Product_Specific_Terms/4D_Product_Specific_Terms_English.pdf).
 * 4D Developer Professional (which comes with [one local access and one remote access](https://downloads.4d.com/Documents/Website/Legal/4D_Product_Specific_Terms/4D_Product_Specific_Terms_English.pdf) to test the REST server)
@@ -387,3 +387,14 @@ the client (local) database needs to connent to the REST server with [Open datas
 * 4D Unlimited Desktop (likewise)
 
 **Note**: the [openDatastore](https://developer.qodly.com/docs/language/commands/openDatastore) command is also available in Qodly. see the blog post [When Qodly.com Meets 4D Server, What Are They Talking About?](https://blog.4d.com/when-qodly-com-meets-4d-server-what-are-they-talking-about/)
+
+### wouldn't data be sent in clear text if I use HTTP over port 80?
+
+yes. in production you should disable HTTP and use HTTPS. see [Enabling TLS with the HTTP server](https://developer.4d.com/docs/Admin/tls#enabling-tls-with-the-http-server)
+
+### are triggers fired during DCT replication?
+
+yes. the component uses the standard ORDA functions [`entity.drop()`](https://developer.4d.com/docs/API/EntityClass#drop) and [`entity.save()`](https://developer.4d.com/docs/API/EntityClass#save) to perform CRUD operations. [triggers](https://doc.4d.com/4Dv20/4D/20.5/Triggers.300-7389331.en.html) for each table. it is also up to you to decide whether to implement [transactions and/or pessimisitic locking](https://developer.4d.com/docs/ORDA/datastores#locking-and-transactions).  see also
+
+* [ALTER TABLE](https://doc.4d.com/4Dv20/4D/20/ALTER-TABLE.300-6342143.en.html)
+* [ALTER DATABASE](https://doc.4d.com/4Dv20/4D/20/ALTER-DATABASE.300-6342132.en.html)
