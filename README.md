@@ -366,4 +366,24 @@ End if
 7. modify records remotely
 8. trace the `cs.DCT.DCT` class
 
-## Q and A
+## Extra
+
+Q. which licenses would I need to use DCT?
+
+A. the remote (server) database needs to be published as a REST server. this means you need licenses to publish the application as a REST server. [connections via REST Server are handled as session-based connections with a minimum usage time of 60 minutes](https://downloads.4d.com/Documents/Website/Legal/4D_Product_Specific_Terms/4D_Product_Specific_Terms_English.pdf).
+* 4D Developer Professional (which comes with [one local access and one remote access](https://downloads.4d.com/Documents/Website/Legal/4D_Product_Specific_Terms/4D_Product_Specific_Terms_English.pdf) to test the REST server)
+* 4D Team Developer Professional (likewise)
+* 4D Server ([REST connection requires a client expansion license](https://downloads.4d.com/Documents/Website/Legal/4D_Product_Specific_Terms/4D_Product_Specific_Terms_English.pdf))
+the local (client) application
+
+**Note**: even though REST technically uses HTTP, the Web Server or Web Services license does NOT give access to the REST server. 
+the client (local) database needs to access the REST server with [Open datastore](https://developer.4d.com/docs/commands/open-datastore). all product licenses has access to this command. 
+* 4D Desktop (formally 4D SQL Desktop)
+* 4D Desktop Business Edition (formally 4D OEM Desktop)
+* 4D Developer Professional 
+* 4D Team Developer Professional
+* 4D Server 
+* 4D Developer Standard ([communicating with other servers is permitted for reading data as well as writing data within the limit of twice every twenty-four hours](https://downloads.4d.com/Documents/Website/Legal/4D_Product_Specific_Terms/4D_Product_Specific_Terms_English.pdf))
+* 4D Unlimited Desktop (likewise)
+
+**Note**: the command is also available in [Qodly](https://developer.qodly.com/docs/language/commands/openDatastore) 
