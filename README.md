@@ -386,4 +386,4 @@ the client (local) database needs to connent to the REST server with [Open datas
 * 4D Developer Standard ([communicating with other servers is permitted for reading data as well as writing data within the limit of twice every twenty-four hours](https://downloads.4d.com/Documents/Website/Legal/4D_Product_Specific_Terms/4D_Product_Specific_Terms_English.pdf))
 * 4D Unlimited Desktop (likewise)
 
-**Note**: the command is also available in [Qodly](https://developer.qodly.com/docs/language/commands/openDatastore) 
+**Note**: the [openDatastore](https://developer.qodly.com/docs/language/commands/openDatastore) command is also available in Qodly. see the blog post [When Qodly.com Meets 4D Server, What Are They Talking About?](https://blog.4d.com/when-qodly-com-meets-4d-server-what-are-they-talking-about/)
