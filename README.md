@@ -420,3 +420,5 @@ DCT is based on native ORDA features, meaning all the tools available in data mo
 * the remote context, also introduced in 4D 19 R5; see [`ds.getRemoteContextInfo()`](https://developer.4d.com/docs/API/DataStoreClass.html#getremotecontextinfo), [`ds.getAllRemoteContexts()`](https://developer.4d.com/docs/API/DataStoreClass.html#getallremotecontexts)
 
 also any tables and fields not made available via REST are never sent over the network.
+
+see [discuss.4d.com](https://discuss.4d.com/t/ann-4dmethod-meeting-today-enable-data-change-tracking-keisuke-miyako/33917/4) for more on this topic.
