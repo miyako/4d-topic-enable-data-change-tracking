@@ -423,7 +423,7 @@ also any tables and fields not made available via REST are never sent over the n
 
 ### is it normal that I see `2` users on my server admin window?
 
-yes. an [`Open datastore`](https://developer.4d.com/docs/commands/open-datastore) call normally creates `2` REST processes on the server, which appear on the "Users" page of the server admin window. starting with 20 R5 (force login mode) these connection do not consume 4D Client Expansion licenses. see blog article "[Improved 4D Client Licenses Usage with Qodly Studio for 4D](https://blog.4d.com/improved-4d-client-licenses-usage-with-qodly-studio-for-4d/)". licenses are allocated after a successful [`ds.authentify()`](https://developer.4d.com/docs/REST/authUsers#function-authentify). you can check the number of used licenses in the "Monitor" page of the server admin window. you can also type
+yes. an [`Open datastore`](https://developer.4d.com/docs/commands/open-datastore) call normally creates `2` REST processes on the server, which appear on the "Users" page of the server admin window. starting with 20 R5 (force login mode) these connections do not automatically consume 4D Client Expansion licenses. see blog article "[Improved 4D Client Licenses Usage with Qodly Studio for 4D](https://blog.4d.com/improved-4d-client-licenses-usage-with-qodly-studio-for-4d/)". licenses are allocated after a successful [`ds.authentify()`](https://developer.4d.com/docs/REST/authUsers#function-authentify). you can check the number of used licenses in the "Monitor" page of the server admin window. you can also type
 
 ```4d
 License info.products.query("name == :1"; "4D Client")[0].usedCount
