@@ -440,3 +440,7 @@ Process activity.sessions.query("type == :1"; "rest").extract("systemUserName"; 
 do not necessarily correspond to the number of user sessions.
 
 see [discuss.4d.com](https://discuss.4d.com/t/ann-4dmethod-meeting-today-enable-data-change-tracking-keisuke-miyako/33917/4) for more on this topic.
+
+### I can't save an entity on the remote datastore. what could be the reason?
+
+check the diagnostic log. you may find entries that suggest insufficient privileges. note that if a table has triggers and datastore/dataclass member functions are used, the REST handler process session must have execute privileges to call those functions.
