@@ -443,4 +443,4 @@ see [discuss.4d.com](https://discuss.4d.com/t/ann-4dmethod-meeting-today-enable-
 
 ### I can't save an entity on the remote datastore. what could be the reason?
 
-check the diagnostic log. you may find entries that suggest insufficient privileges. note that if a table has triggers and datastore/dataclass member functions are used, the REST handler process session must have execute privileges to call those functions.
+check the diagnostic log of the remote datastore. you may find entries that suggest insufficient privileges. note that if a table has triggers and datastore or dataclass member functions are used in a trigger, the REST handler process session must have execute privileges to call those functions.
